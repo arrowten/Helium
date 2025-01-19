@@ -36,4 +36,7 @@ auto lexer_parse_identifier(std::shared_ptr<Lexer> lex) -> std::shared_ptr<Synta
 //Function to parse a number
 auto lexer_parse_number(std::shared_ptr<Lexer> lex) -> std::shared_ptr<Syntax_Token>;
 
+//Function to get the next token
+auto lexer_next_token(std::shared_ptr<Lexer> lex) -> std::shared_ptr<Syntax_Token>;
+
 #endif
