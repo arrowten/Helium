@@ -9,6 +9,9 @@ set(CMAKE_CXX_STANDARD 17)
 #Export compilation database in JSON format
 set(CMAKE_EXPORT_COMPILE_COMMANDS on)
 
+#Directories to include
+include_directories(include)
+
 #All the source files
 set(SOURCES sources/main.cpp)
 
