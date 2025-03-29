@@ -1,4 +1,5 @@
 #include "lexer.hpp"
+#include "macros.hpp"
 
 auto initialize_lexer(std::string source) -> std::shared_ptr<Lexer> {
     std::shared_ptr<Lexer> lex = std::make_shared<Lexer>();
@@ -13,6 +14,25 @@ auto initialize_lexer(std::string source) -> std::shared_ptr<Lexer> {
 void lexer_advance(std::shared_ptr<Lexer> lex) {
     lex->_index++;
     lex->_c = (lex->_index < lex->_size) ? lex->_source[lex->_index]: '\0';
+}
+
+auto lexer_return_first_token(std::shared_ptr<Lexer> lex, std::shared_ptr<Syntax_Token> token) -> std::shared_ptr<Syntax_Token> {
+    lexer_advance(lex);
+
+    return token;
+}
+
+auto lexer_advance_current_token(std::shared_ptr<Lexer> lex, Token_Type type) -> std::shared_ptr<Syntax_Token> {
+    std::string value;
+    value += lex->_c;
+    std::shared_ptr<Syntax_Token> token = initialize_token(value, type);
+    lexer_advance(lex);
+
+    return token;
+}
+
+auto lexer_peek(std::shared_ptr<Lexer> lex, int offset) -> char {
+    return lex->_source[MIN(lex->_index + offset, lex->_size)];
 }
 
 void lexer_skip_whitespaces(std::shared_ptr<Lexer> lex) {
