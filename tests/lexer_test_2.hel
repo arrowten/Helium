@@ -1,0 +1,3 @@
+main(integer argc, string[] argv) => integer {
+    return 0;
+}

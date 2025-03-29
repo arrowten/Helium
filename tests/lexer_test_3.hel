@@ -1,0 +1,5 @@
+main() => integer {
+    integer a, b;
+
+    a = a ^ b;
+}

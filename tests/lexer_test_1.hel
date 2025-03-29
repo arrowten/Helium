@@ -1,0 +1,6 @@
+main() => integer {
+    integer a = 10, b = 20;
+    bool c = (a <= b);
+    
+    return a + b;
+}
