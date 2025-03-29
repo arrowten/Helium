@@ -13,7 +13,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS on)
 include_directories(include)
 
 #All the source files
-set(SOURCES sources/main.cpp)
+set(SOURCES sources/io.cpp sources/helium.cpp sources/lexer.cpp sources/token.cpp sources/main.cpp)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
