@@ -21,4 +21,10 @@ void lexer_advance(std::shared_ptr<Lexer> lex);
 //Function for skipping whitespaces
 void lexer_skip_whitespaces(std::shared_ptr<Lexer> lex);
 
+//Function to parse an identifier
+auto lexer_parse_identifier(std::shared_ptr<Lexer> lex) -> std::shared_ptr<Syntax_Token>;
+
+//Function to parse a number
+auto lexer_parse_number(std::shared_ptr<Lexer> lex) -> std::shared_ptr<Syntax_Token>;
+
 #endif
