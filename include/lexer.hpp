@@ -18,6 +18,15 @@ auto initialize_lexer(std::string source) -> std::shared_ptr<Lexer>;
 //Function to increment by a character
 void lexer_advance(std::shared_ptr<Lexer> lex);
 
+//Function to return the first token
+auto lexer_return_first_token(std::shared_ptr<Lexer> lex, std::shared_ptr<Syntax_Token> token) -> std::shared_ptr<Syntax_Token>;
+
+//Function to advance the current token
+auto lexer_advance_current_token(std::shared_ptr<Lexer> lex, Token_Type type) -> std::shared_ptr<Syntax_Token>;
+
+//Function to see a character
+auto lexer_peek(std::shared_ptr<Lexer> lex, int offset) -> char;
+
 //Function for skipping whitespaces
 void lexer_skip_whitespaces(std::shared_ptr<Lexer> lex);
 
