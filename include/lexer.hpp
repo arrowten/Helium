@@ -15,4 +15,10 @@ struct Lexer {
 //Function to initialize the lexer
 auto initialize_lexer(std::string source) -> std::shared_ptr<Lexer>;
 
+//Function to increment by a character
+void lexer_advance(std::shared_ptr<Lexer> lex);
+
+//Function for skipping whitespaces
+void lexer_skip_whitespaces(std::shared_ptr<Lexer> lex);
+
 #endif
