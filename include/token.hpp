@@ -3,6 +3,7 @@
 #ifndef TOKEN_HPP
 #define TOKEN_HPP
 
+#include <iostream>
 #include <string>
 #include <memory>
 
@@ -50,5 +51,8 @@ struct Syntax_Token {
 
 //Function to initialise the token
 auto initialize_token(std::string value, Token_Type type) -> std::shared_ptr<Syntax_Token>;
+
+//Function to display token type
+auto token_type_to_string(Token_Type type) -> std::string;
 
 #endif
