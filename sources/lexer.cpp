@@ -20,3 +20,25 @@ void lexer_skip_whitespaces(std::shared_ptr<Lexer> lex) {
         lexer_advance(lex);
     }
 }
+
+auto lexer_parse_identifier(std::shared_ptr<Lexer> lex) -> std::shared_ptr<Syntax_Token> {
+    std::string identifier;
+
+    while(std::isalpha(lex->_c)) {
+        identifier.push_back(lex->_c);
+        lexer_advance(lex);
+    }
+
+    return initialize_token(identifier, Token_Type::identifier_token);
+}
+
+auto lexer_parse_number(std::shared_ptr<Lexer> lex) -> std::shared_ptr<Syntax_Token> {
+    std::string number;
+
+    while(std::isdigit(lex->_c)) {
+        number.push_back(lex->_c);
+        lexer_advance(lex);
+    }
+
+    return initialize_token(number, Token_Type::number_token);
+}
